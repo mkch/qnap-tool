@@ -6,7 +6,7 @@ A useful command line program to manage QNAP NAS.
 
 ```shell
     # Power on (Wake-on-LAN)
-    qnap-tool wake 11:22:33:44:55:66 #MAC of NAS
+    qnap-tool wake 11:22:33:44:55:66 # MAC of NAS
 
     # Power off
     qnap-tool shutdown 1.2.3.4 # IP of NAS
