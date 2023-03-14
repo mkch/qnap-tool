@@ -24,21 +24,35 @@ func main() {
 	flag.BoolVar(&https, "https", false, "Whether the admin page is https enabled")
 	flag.Parse()
 
-	if flag.NArg() > 2 {
-		errorExit("too many arguments", 1)
-	} else if flag.NArg() < 2 {
-		errorExit("too few arguments", 1)
+	if flag.NArg() == 0 {
+		os.Stderr.WriteString("no argument\n\n")
+		flag.Usage()
+		os.Exit(1)
 	}
 
 	var action = flag.Args()[0]
-	var arg = flag.Args()[1]
 
 	switch action {
+	case "version":
+		if flag.NArg() > 1 {
+			errorExit("too many arguments", 1)
+		}
+		fmt.Fprintf(os.Stdout, "qnap-tool v%v\n", version)
 	case "wake":
-		if err := qnap.Wake(arg); err != nil {
+		if flag.NArg() > 2 {
+			errorExit("too many arguments", 1)
+		} else if flag.NArg() < 2 {
+			errorExit("too few arguments", 1)
+		}
+		if err := qnap.Wake(flag.Args()[1]); err != nil {
 			errorExit(err.Error(), 1)
 		}
 	case "shutdown":
+		if flag.NArg() > 2 {
+			errorExit("too many arguments", 1)
+		} else if flag.NArg() < 2 {
+			errorExit("too few arguments", 1)
+		}
 		var userSet, passwordSet bool
 		flag.Visit(func(f *flag.Flag) {
 			switch f.Name {
@@ -67,7 +81,7 @@ func main() {
 		if https {
 			scheme = "https"
 		}
-		var baseUrl = fmt.Sprintf("%v://%v:%v", scheme, arg, port)
+		var baseUrl = fmt.Sprintf("%v://%v:%v", scheme, flag.Args()[1], port)
 		if err := qnap.Shutdown(baseUrl, user, password); err != nil {
 			code := 1
 			if errors.Is(err, qnap.ErrAuthFailed) {

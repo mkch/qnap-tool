@@ -15,6 +15,7 @@ Utilities to manage QNAP NAS.
 qnap-tool [flags] action arg
 
 Actions:
+  version: Show version number of this program.
   wake:  Wake up a NAS by Wake-on-LAN.
     qnap-tool wake MAC-ADDRESS
   shutdown:  Shuts down a NAS.
