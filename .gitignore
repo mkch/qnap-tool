@@ -22,3 +22,4 @@ go.work
 .vscode
 qnap-tool
 bin/
+.DS_Store
