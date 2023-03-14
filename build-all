@@ -1,0 +1,3 @@
+GOOS=darwin GOARCH=amd64 go build -o bin/qnap-tool-darwin-amd64
+GOOS=windows GOARCH=amd64 go build -o bin/qnap-tool-windows-amd64.exe
+GOOS=linux GOARCH=amd64 go build -o bin/qnap-tool-linux-amd64
