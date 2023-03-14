@@ -1,3 +1,5 @@
+// qnap-tool is a command line program to manage QNAP NAS.
+// See qnap-tool --help for details.
 package main
 
 import (

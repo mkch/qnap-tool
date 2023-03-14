@@ -1,3 +1,4 @@
+// Package qnap implements useful utilities of QNAP NAS.
 package qnap
 
 import (
@@ -11,7 +12,7 @@ import (
 )
 
 // ErrAuthFailed is the error returned by Shutdown or
-// other functions  to indicate a authentication error.
+// other functions  to indicate an authentication error.
 var ErrAuthFailed = errors.New("authentication failed")
 
 func login(baseUrl, user, password string) (sid string, err error) {
@@ -40,8 +41,8 @@ func login(baseUrl, user, password string) (sid string, err error) {
 }
 
 // Shutdown shuts down the QNAP NAS.
-// baseUrl is the base url of QNAP admin page, in format of "http(s)://IP:port" (http://192.168.0.111:5000 for example).
-// user and password is the user name and password used to login.
+// baseUrl is the base URL of QNAP admin page, in format of "http(s)://IP:port" (http://192.168.0.111:5000 for example).
+// user and password are used to login.
 func Shutdown(baseUrl, user, password string) error {
 	sid, err := login(baseUrl, user, password)
 	if err != nil {
@@ -69,7 +70,8 @@ func Shutdown(baseUrl, user, password string) error {
 }
 
 // Wake sends a Wake-on-LAN request to the NIC.
-// If Wake-on-LAN is enabled, the plugged but powered off NAS should be turned on.
+// If Wake-on-LAN is enabled, the plugged but powered off NAS with
+// the NIC should be turned on.
 func Wake(macAddr string) error {
 	return wol.Wake(macAddr)
 }
