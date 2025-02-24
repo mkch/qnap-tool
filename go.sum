@@ -1,5 +1,5 @@
-github.com/mkch/wol v0.0.0-20230313070134-c54ad23cd469 h1:HwsQsuW65W2woiyHQWgcJ65frRbXTyk00flPkoTHRqQ=
-github.com/mkch/wol v0.0.0-20230313070134-c54ad23cd469/go.mod h1:wvZfDBM9p88+ozfY3URmR23YSq1K3bkT4bupIT08He4=
+github.com/mkch/wol v0.0.0-20250224115906-b567fff359c4 h1:KZ5YnEi+nhI+mMy0RXUgb2rKYLMG8kPmmPVLsupeOlE=
+github.com/mkch/wol v0.0.0-20250224115906-b567fff359c4/go.mod h1:wvZfDBM9p88+ozfY3URmR23YSq1K3bkT4bupIT08He4=
 golang.org/x/sys v0.6.0 h1:MVltZSvRTcU2ljQOhs94SXPftV6DCNnZViHeQps87pQ=
 golang.org/x/sys v0.6.0/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/term v0.6.0 h1:clScbb1cHjoCkyRbWwBEUZ5H/tIFu5TAXIqaZD0Gcjw=
